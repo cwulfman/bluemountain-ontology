@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="file:/usr/local/share/xml/rdf/rdfxml.rnc" type="application/relax-ng-compact-syntax"?>
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <rdfs:Class rdf:about="Magazine">
+        <rdfs:label>Magazine</rdfs:label>
+        <rdfs:comment> An abstract serial work comprising publications. Equivalent to FRBRoo
+            F18_Serial_Work, cited here.</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="F18_Serial_Work"/>
+    </rdfs:Class>
+    <rdfs:Class rdf:about="Number">
+        <rdfs:label>Number</rdfs:label>
+        <rdfs:comment>One of periodic publications comprising a magazine. Often equivalent to
+            B3_issue, but an issue is the thing that's actually published; the number is more
+            conceptual. That is, a B2_Number is equivalent to FRBRoo F19_Publication_Work and an
+            issue is equivalent to F24_Publication_Expression. An issue can comprise more than one
+            number. </rdfs:comment>
+        <rdfs:subClassOf rdf:resource="F19_Publication_Work"/>
+    </rdfs:Class>
+    <rdfs:Class rdf:about="Issue">
+        <rdfs:label>Issue</rdfs:label>
+        <rdf:comment>A periodic issuance of a magazine. An issue is the printed manifestation of one
+            or more conceptual B2_Numbers; it is something that is actually published. Equivalent to
+            FRBRoo F24_Publication_Expression.</rdf:comment>
+        <rdfs:subClassOf rdf:resource="F24_Publication_Expression"/>
+    </rdfs:Class>
+    <rdfs:Class rdf:about="Copy">
+        <rdfs:label>Copy</rdfs:label>
+        <rdfs:comment>A physical instance of an issue.</rdfs:comment>
+    </rdfs:Class>
+    <rdfs:Class rdf:about="Run">
+        <rdfs:label>Run</rdfs:label>
+        <rdfs:comment>The full, ordered sequence of issues published during the lifetime of a
+            magazine.</rdfs:comment>
+    </rdfs:Class>
+    <rdfs:Class rdf:about="Lifetime">
+        <rdfs:label>Lifetime</rdfs:label>
+        <rdfs:comment> A timespan starting with the publication date of the first issue in the run
+            and ending with the publication date of the last issue in the run. </rdfs:comment>
+    </rdfs:Class>
+    <rdfs:Class rdf:about="Title">
+        <rdfs:label>Title</rdfs:label>
+    </rdfs:Class>
+</RDF>
